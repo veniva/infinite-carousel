@@ -1,73 +1,17 @@
-# React + TypeScript + Vite
+# LL Infinite Carousel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A linked list backed infinite `Carousel`.
 
-Currently, two official plugins are available:
+## Implementation
+It uses `https://picsum.photos` for getting random images of different sizes, and displays them in the form of `carousel` which:
+- is scrolled by mouse wheel only
+- is loading more image metadata into the linked-list as the scrolling progresses until certain number is reached
+- when all the image metadata is loaded, the linked list is closed, and the carousel loops
+- a treshold of pre-rendered hidden images (slots) are prepared on both sides of the carousel's viewport
+- as the user scrolls and reaches a treshold size in px before the end of the pre-loaded images on that side, more images are loaded from the backing linked-list.
+- on the oposite side, images are removed to maintain the pre-rendered treshold size
+- the images themselves are loaded when rendered on the UI via the `src` parameter.
+- no images are stored in the JS memory, those are downloaded/cashed and managed by the browser
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Architecture
+To achieve encapsulation, maintainability and re-usability, the logic is split into classes outside ReactJS and is framework agnostic. Aditionally, a dedicated React component manages the UI layer.
