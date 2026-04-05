@@ -1,16 +1,16 @@
-import { describe, it, expect, afterEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import * as helpers from "./helpers";
-import type { PicsumImage, ImageNodesList } from "./types";
+import type { DoubleLinkedList, LinkListNode } from "./types";
 
 const { createLinkedList, joinLists, isLinkedListClosed, closeList } = helpers;
 
-function makeImage(id: string): PicsumImage {
+type Img = { id: string };
+type ImageNode = LinkListNode<Img>;
+type ImageNodesList = DoubleLinkedList<ImageNode>;
+
+function makeImage(id: string): Img {
   return {
-    id,
-    author: `author-${id}`,
-    width: 100,
-    height: 200,
-    download_url: `https://example.com/${id}.jpg`,
+    id
   };
 }
 

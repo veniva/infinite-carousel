@@ -15,3 +15,9 @@ It uses `https://picsum.photos` for getting random images of different sizes, an
 
 ## Architecture
 To achieve encapsulation, maintainability and re-usability, the logic is split into classes outside ReactJS and is framework agnostic. Aditionally, a dedicated React component manages the UI layer.
+
+## Run instructions
+- clone locally and install with `npm ci`
+- run `npm run test` to run the tests
+- run `npm run dev` to start in dev mode
+- run `npm run build && npm run preview` to build & preview a production build

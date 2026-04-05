@@ -3,7 +3,7 @@ import type {
   ImageNodesList,
   SlotsLayout,
 } from "./types";
-import { clamp } from "./../helpers";
+import { clamp } from "../helpers";
 
 
 type GetRenderedImageWidth = (node: ImageNode) => number;

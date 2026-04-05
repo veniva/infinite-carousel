@@ -3,7 +3,7 @@ import {
   createLinkedList,
   isLinkedListClosed,
   joinLists,
-} from "./../helpers";
+} from "../helpers";
 
 import { SlotsController } from "./SlotsController";
 import type { InsertPosition } from "../types";

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Carousel.css";
 import { CarouselController } from "./CarouselController";
-import { clamp } from "./../helpers";
+import { clamp } from "../helpers";
 import type { SlotsLayout, CarouselSlot } from "./types";
 
 type Props = {
