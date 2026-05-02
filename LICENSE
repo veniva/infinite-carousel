@@ -1,0 +1,50 @@
+# Proprietary Evaluation-Only License – No AI Training
+
+Copyright (c) 2026 Ventsislav Ivanov
+
+## 1. Grant of Rights
+
+Permission is hereby granted to access, view, and use the contents of this repository **solely for evaluation, educational, and non-commercial purposes**.
+
+## 2. Restrictions
+
+The following uses are strictly prohibited without prior written permission from the copyright holder:
+
+### 2.1 Commercial Use
+
+* Any commercial use of the code, in whole or in part
+* Use in products or services intended for commercial advantage or monetary compensation
+
+### 2.2 AI / Machine Learning Use
+
+* Use of this repository, in whole or in part, for:
+
+  * Training machine learning or artificial intelligence models
+  * Fine-tuning or improving model performance
+  * Dataset creation for AI systems
+  * Retrieval-augmented generation (RAG) systems
+* Automated scraping or ingestion of this repository for AI-related purposes
+
+### 2.3 Redistribution
+
+* Redistribution, sublicensing, or resale of this code or derivatives
+
+### 2.4 Modification for Production Use
+
+* Modifying and using the code in any production system or service
+
+## 3. Ownership
+
+All rights, title, and interest in and to the repository remain with the copyright holder.
+
+## 4. No Warranty
+
+This software is provided "as is", without warranty of any kind, express or implied.
+
+## 5. Termination
+
+Any violation of these terms automatically terminates the rights granted under this license.
+
+## 6. Contact
+
+For permissions beyond the scope of this license, contact the owner.
